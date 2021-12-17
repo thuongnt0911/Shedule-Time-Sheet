@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+    <!--Boostrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--CSS-->
+    <link rel="stylesheet" href="scss/style.css">
+</head>
+
+<body>
+    <div class="container d-flex justify-content-center">
+
+        <form action="index.html" class="login login-form" autocomplete="off">
+            <h2 class="login__title">Login</h2>
+            <div class="login__control content">
+                <label for="username" class="form-label d-inline-block">Username</label>
+                <input type="text" class="d-block login__input" id="username" placeholder="user name">
+            </div>
+            <div class="login__control content">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="login__input" id="password" placeholder="password">
+            </div>
+            <p class="form-validate" d-none></p>
+            <button type="button" class="login__btn form-submit d-flex align-items-center justify-content-center"
+                id="btn-login" onclick="checkAccount()">Log in</button>
+        </form>
+    </div>
+
+    <!--Script-->
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Table - ThuongNT</title>
+
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+    <!--Boostrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--CSS-->
+    <link rel="stylesheet" href="scss/style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <section class="main d-flex justify-content-between">
+            <div class="main__categories" data-category-list>
+                <div class="main__categories-title title-head">
+                    <h2>Categories</h2>
+                    <input type="search" class="search__category" placeholder="Search here..." onkeyup="search()">
+                </div>
+                <div class="main__categories-content" id="categories-content">
+                    <ul class="main__categories-list" id="categories">
+                        <!-- <li class="main__categories-item" >Subject Categories 1</li> -->
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="main__subjects" id="">
+                <button class="btn-back" onclick="back()"><i class="fas fa-arrow-left"></i></button>
+                <div class="main__subjects-title title-head d-flex">
+
+
+                    <!-- <h2 >Subject</h2> -->
+                </div>
+                <div class="main__subjects-content" id="subjects-content">
+                    <ul class="main__subjects-list" id="subjects">
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="main__table">
+                <div class="main__table-title title-head">
+                    <h2>Time Table</h2>
+
+                </div>
+                <table class="main__table-content table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <!-- <th scope="col" style="width: 50px;"></th> -->
+                            <th scope="col" class="text-center" style="width: 100px;">Mon</th>
+                            <th scope="col" class="text-center" style="width: 100px;">Tue</th>
+                            <th scope="col" class="text-center" style="width: 100px;">Wed</th>
+                            <th scope="col" class="text-center" style="width: 100px;">Thu</th>
+                            <th scope="col" class="text-center" style="width: 100px;">Fri</th>
+                            <th scope="col" class="text-center" style="width: 100px;">Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-content" class="table__content d-none">
+                        <tr id="week-1" class="table__content-week">
+                            <td class="day-1 table__content-day" draggable="true">
+
+                            </td>
+                            <td class="day-2 table__content-day" draggable="true"></td>
+                            <td class="day-3 table__content-day" draggable="true"></td>
+                            <td class="day-4 table__content-day" draggable="true"></td>
+                            <td class="day-5 table__content-day" draggable="true"></td>
+                            <td class="day-6 table__content-day" draggable="true"></td>
+                        </tr>
+                        <tr id="week-2" class="table__content-week">
+                            <td class="day-1 table__content-day" draggable="true"></td>
+                            <td class="day-2 table__content-day" draggable="true"></td>
+                            <td class="day-3 table__content-day" draggable="true"></td>
+                            <td class="day-4 table__content-day" draggable="true"></td>
+                            <td class="day-5 table__content-day" draggable="true"></td>
+                            <td class="day-6table__content-day" draggable="true"></td>
+                        </tr>
+                        <tr id="week-3" class="table__content-week">
+                            <td class="day-1 table__content-day" draggable="true"></td>
+                            <td class="day-2 table__content-day" draggable="true"></td>
+                            <td class="day-3 table__content-day" draggable="true"></td>
+                            <td class="day-4 table__content-day" draggable="true"></td>
+                            <td class="day-5 table__content-day" draggable="true"></td>
+                            <td class="day-6 table__content-day" draggable="true"></td>
+                        </tr>
+                        <tr id="week-4" class="table__content-week">
+                            <td class="day-1 table__content-day" draggable="true"></td>
+                            <td class="day-2 table__content-day" draggable="true"></td>
+                            <td class="day-3 table__content-day" draggable="true"></td>
+                            <td class="day-4 table__content-day" draggable="true"></td>
+                            <td class="day-5 table__content-day" draggable="true"></td>
+                            <td class="day-6 table__content-day" draggable="true"></td>
+                        </tr>
+                        <tr id="week-5" class="table__content-week">
+                            <td class="day-1 table__content-day" draggable="true"></td>
+                            <td class="day-2 table__content-day" draggable="true"></td>
+                            <td class="day-3 table__content-day" draggable="true"></td>
+                            <td class="day-4 table__content-day" draggable="true"></td>
+                            <td class="day-5 table__content-day" draggable="true"></td>
+                            <td class="day-6 table__content-day" draggable="true"></td>
+                        </tr>
+                        <tr id="week-6" class="table__content-week">
+                            <td class="day-1 table__content-day" draggable="true"></td>
+                            <td class="day-2 table__content-day" draggable="true"></td>
+                            <td class="day-3 table__content-day" draggable="true"></td>
+                            <td class="day-4 table__content-day" draggable="true"></td>
+                            <td class="day-5 table__content-day" draggable="true"></td>
+                            <td class="day-6 table__content-day" draggable="true"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="footer d-flex">
+            <div class="footer__option d-flex justify-content-center align-items-center">
+                <div class="footer__option-item subjects">
+                    <a id="show-subject" href="#" class="footer__button d-flex flex-column">
+                        <i class="fas fa-bars"></i>
+                        <p>Subjects</p>
+                    </a>
+                </div>
+                <div class="footer__option-item search" onclick="showSearchForm()">
+                    <a href="#" class="footer__button d-flex flex-column">
+                        <i class="fas fa-search"></i>
+                        <p>Search</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer__save d-flex justify-content-end align-items-center">
+                <button class="btn btn-save d-none" id="save" onclick="postData(catData)">save time table</button>
+                <button class="btn btn-logout" id="logout" onclick="logOut()">Log Out</button>
+            </div>
+        </footer>
+    </div>
+    <!--Script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

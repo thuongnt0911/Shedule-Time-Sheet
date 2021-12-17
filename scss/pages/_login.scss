@@ -1,0 +1,61 @@
+.login {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $white;
+    border-radius: 10px;
+
+    &__title {
+        color: $gray-t;
+        font-weight: 700;
+        font-size: 32px;
+        margin: 10px auto;
+    }
+
+    &__input {
+        width: 100%;
+        background-color: $white;
+        border: none;
+        padding: 10px;
+        border-bottom: 1px solid $gray;
+
+        &::placeholder {
+            font-size: 14px;
+            color: $gray-s;
+        }
+
+        &:focus {
+            border: 1px $blue solid;
+            border-radius: 20px;
+        }
+    }
+
+    &__content {
+        color: $gray-s;
+        font-weight: 600;
+        font-size: 14px;
+        width: 20%;
+    }
+
+    &__btn {
+        width: 40%;
+        margin: 20px auto;
+        padding: 10px;
+        background: linear-gradient(to top right, #039be5 0%, #ff66ff 72%);
+        color: $white;
+        border-radius: 20px;
+        @include shadow;
+    }
+
+    &__control {
+        position: relative;
+        &-error {
+            color: $red;
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            visibility: hidden;
+        }
+    }
+}

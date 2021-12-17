@@ -1,0 +1,9 @@
+@mixin shadow {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@mixin tablet {
+    @media (max-width: 900px) {
+        @content;
+    }
+}
